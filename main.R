@@ -1,5 +1,6 @@
 set.seed(42)
 library(tercen)
+library(dplyr)
 library(reshape2)
 library(Rphenograph)
 
