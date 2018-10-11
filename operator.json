@@ -1,0 +1,17 @@
+{
+  "name": "rphenograph",
+  "description": "clustering algorithm from the rphenograph R package",
+  "tags": ["clustering", "flow cytometry"],
+  "authors": ["tercen"],
+  "urls": ["https://github.com/tercen/rphenograph_operator"],
+  "properties": [
+  {
+    "kind": "DoubleProperty",
+    "name": "k",
+    "defaultValue": 30,
+    "description": "integer, number of nearest neighbours"
+  }
+  ]
+}
+
+
