@@ -11,9 +11,9 @@ data = (ctx = tercenCtx())  %>%
 colnames(data) = paste('c', colnames(data), sep = '')
 
 k <- 30
-if(!is.null(ctx$op.value('k'))) k <- ctx$op.value('k')
+if(!is.null(ctx$op.value('k'))) k <- as.numeric(ctx$op.value('k'))
 seed <- 42
-if(!is.null(ctx$op.value('seed'))) k <- ctx$op.value('seed')
+if(!is.null(ctx$op.value('seed'))) k <- as.numeric(ctx$op.value('seed'))
 set.seed(seed)
 
 dataRpheno = Rphenograph::Rphenograph(data, k = k)
