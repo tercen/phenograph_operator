@@ -10,8 +10,6 @@ data = (ctx = tercenCtx())  %>%
 
 colnames(data) = paste('c', colnames(data), sep = '')
 
-data <- as.matrix(iris[,1:4])
-
 k <- 30
 if(!is.null(ctx$op.value('k'))) k <- ctx$op.value('k')
 seed <- 42
