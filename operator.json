@@ -10,6 +10,12 @@
     "name": "k",
     "defaultValue": 30,
     "description": "integer, number of nearest neighbours"
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "seed",
+    "defaultValue": 42,
+    "description": "integer, random seed"
   }
   ]
 }
