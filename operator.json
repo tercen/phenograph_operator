@@ -1,6 +1,6 @@
 {
-  "name": "rphenograph",
-  "description": "clustering algorithm from the rphenograph R package",
+  "name": "Rphenograph",
+  "description": "Calclates the Jaccard coefficient between nearest-neighbor sets and identifys clusters representing phenotypic similarities between cells.",
   "tags": ["clustering", "flow cytometry"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/rphenograph_operator"],
