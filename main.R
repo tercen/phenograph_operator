@@ -4,7 +4,9 @@ library(reshape2)
 library(Rphenograph) # https://github.com/i-cyto/Rphenograph
 library(igraph)
 
-data = (ctx = tercenCtx())  %>% 
+ctx <- tercenCtx()
+
+data = ctx  %>% 
   select(.ci, .ri, .y) %>% 
   reshape2::acast(.ci ~ .ri, value.var = '.y', fill = NaN, fun.aggregate = mean) 
 
