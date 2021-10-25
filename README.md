@@ -2,7 +2,7 @@
 
 ##### Description
 
-`rphenograph` operator performs a phenotype clustering in the `Rphenograph` R package.
+The `rphenograph` operator performs a clustering of data (mainly flow cytometry) from the `Rphenograph` package.
 
 ##### Usage
 
@@ -26,6 +26,9 @@ Output relations|.
 
 ##### Details
 
-The operator is the `Rphenograph` function of the `Rphenograh` [R package](https://github.com/i-cyto/Rphenograph).
+The `Rphenograh` R package is a simple R implementation of the phenograph [PhenoGraph](http://www.cell.com/cell/abstract/S0092-8674(15)00637-6) algorithm, which is a clustering method designed for high-dimensional single-cell data analysis. It works by creating a graph ("network") representing phenotypic similarities between cells by calclating the Jaccard coefficient between nearest-neighbor sets, and then identifying communities using the well known [Louvain method](https://sites.google.com/site/findcommunities/) in this graph. 
+
+##### See Also
+[R package](https://github.com/i-cyto/Rphenograph).
 
 
