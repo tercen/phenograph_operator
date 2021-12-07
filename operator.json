@@ -14,8 +14,8 @@
   {
     "kind": "DoubleProperty",
     "name": "seed",
-    "defaultValue": 42,
-    "description": "integer, random seed"
+    "defaultValue": -1,
+    "description": "Seed for random number generation. if less than 0, set a Random seed"
   }
   ]
 }
