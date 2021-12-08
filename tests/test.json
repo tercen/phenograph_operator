@@ -1,7 +1,7 @@
 {
   "kind": "OperatorUnitTest",
   "name": "Rphenograph",
-  "namespace": "test",
+  "namespace": "test1",
   "propertyValues": [
     {
     "kind": "PropertyValue",

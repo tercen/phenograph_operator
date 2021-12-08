@@ -16,7 +16,7 @@ k <- 30
 if(!is.null(ctx$op.value('k'))) k <- as.numeric(ctx$op.value('k'))
 
 seed <- NULL
-if(!is.null(ctx$op.value('seed'))) k <- as.numeric(ctx$op.value('seed'))
+if(!ctx$op.value('seed') < 0) seed <- as.integer(ctx$op.value('seed'))
 set.seed(seed)
 
 dataRpheno <- Rphenograph::Rphenograph(data, k = k)
