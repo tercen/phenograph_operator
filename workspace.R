@@ -23,7 +23,8 @@ colnames(data) <- paste('c', colnames(data), sep = '')
 k <- 30
 if(!is.null(ctx$op.value('k'))) k <- as.numeric(ctx$op.value('k'))
 seed <- 42
-if(!is.null(ctx$op.value('seed'))) k <- as.numeric(ctx$op.value('seed'))
+seed <- NULL
+if(!ctx$op.value('seed') < 0) seed <- as.integer(ctx$op.value('seed'))
 set.seed(seed)
 num_threads<-1
 
