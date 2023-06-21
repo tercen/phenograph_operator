@@ -1,30 +1,30 @@
 library(tercen)
 library(dplyr)
-library(reshape2)
-library(Rphenograph) # https://github.com/i-cyto/Rphenograph
 library(igraph)
+library(Rphenograph)
+library(FastPG)
 
 ctx <- tercenCtx()
 
-data <- ctx  %>% 
-  select(.ci, .ri, .y) %>% 
-  reshape2::acast(.ci ~ .ri, value.var = '.y', fill = NaN, fun.aggregate = mean) 
+data <- ctx$as.matrix(fill = NaN) %>% t()
 
-colnames(data) <- paste('c', colnames(data), sep = '')
+colnames(data) <- paste('c', seq_len(ncol(data)), sep = '')
 
-k <- 30
-if(!is.null(ctx$op.value('k'))) k <- as.numeric(ctx$op.value('k'))
+k <- ctx$op.value('k', as.numeric, 30)
+implementation <- ctx$op.value('implementation', as.character, "FastPG")
 
-seed <- NULL
-if(!ctx$op.value('seed') < 0) seed <- as.integer(ctx$op.value('seed'))
-set.seed(seed)
+seed <- ctx$op.value('seed', as.integer, 42)
+if(seed > 0) set.seed(seed)
 
-dataRpheno <- Rphenograph::Rphenograph(data, k = k)
+if(implementation == "Rphenograph") {
+  dataRpheno <- Rphenograph::Rphenograph(data, k = k)
+  clust <- as.numeric(dataRpheno[[2]]$membership)
+} else {
+  clust <- FastPG::fastCluster(data, k = k)$communities
+}
 
-membership_num <- as.numeric(membership(dataRpheno[[2]]))
-cluster_id <-sprintf(paste0("c%0", max(nchar(as.character(membership_num))), "d"), membership_num)
-#modularity_num <- modularity(dataRpheno[[2]])
+cluster_id <- sprintf(paste0("c%0", max(nchar(as.character(clust))), "d"), clust)
 
-data.frame(.ci = seq(from = 0, to = length(cluster_id) - 1), cluster_id)%>%
+data.frame(.ci = seq(from = 0L, to = length(cluster_id) - 1L), cluster_id) %>%
   ctx$addNamespace() %>%
   ctx$save()

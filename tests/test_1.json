@@ -1,0 +1,29 @@
+{
+  "kind": "OperatorUnitTest",
+  "name": "test_1",
+  "namespace": "ds6",
+  "inputDataUri": "test_1_in.csv",
+  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv"],
+  "columns": [
+    "observation"
+  ],
+  "rows": ["variable"],
+  "colors": [],
+  "labels": [],
+  "yAxis": "y_values",
+  "xAxis": "",
+  "generatedOn": "06/21/2023 10:56:06 AM 2023",
+  "version": "",
+  "propertyValues": [
+    {
+      "kind": "PropertyValue",
+      "name": "seed",
+      "value": "42"
+    },
+    {
+      "kind": "PropertyValue",
+      "name": "implementation",
+      "value": "Rphenograph"
+    }
+  ]
+}
