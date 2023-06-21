@@ -20,7 +20,7 @@ if(implementation == "Rphenograph") {
   dataRpheno <- Rphenograph::Rphenograph(data, k = k)
   clust <- as.numeric(dataRpheno[[2]]$membership)
 } else {
-  clust <- FastPG::fastCluster(data, k = k)$communities
+  clust <- FastPG::fastCluster(data, k = k, num_threads = ctx$availableCores() %/% 2)$communities
 }
 
 cluster_id <- sprintf(paste0("c%0", max(nchar(as.character(clust))), "d"), clust)
