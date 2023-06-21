@@ -11,7 +11,7 @@ data <- ctx$as.matrix(fill = NaN) %>% t()
 colnames(data) <- paste('c', seq_len(ncol(data)), sep = '')
 
 k <- ctx$op.value('k', as.numeric, 30)
-implementation <- ctx$op.value('implementation', as.character, "FastPG")
+implementation <- ctx$op.value('implementation', as.character, "Rphenograph")
 
 seed <- ctx$op.value('seed', as.integer, 42)
 if(seed > 0) set.seed(seed)

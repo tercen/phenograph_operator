@@ -1,34 +1,32 @@
-# rphenograph operator
+# PhenoGraph
 
 ##### Description
 
-The `rphenograph` operator performs a clustering of data (mainly flow cytometry) from the `Rphenograph` package.
+PhenoGraph is a graph-based clustering method for flow cytometry data.
 
 ##### Usage
 
-Input projection|.
+Input data|.
 ---|---
 `row`   | represents the variables (e.g. channels, markers)
 `col`   | represents the observations (e.g. cells) 
 `y-axis`| is the value of measurement signal of the channel/marker
 
-
-Input parameters|.
+Operator Settings|.
 ---|---
 `k`   | integer, number of nearest neighbours (default: 30)
 `seed`   | integer, random seed
+`implementation`   | Whether to use Rphenograph of FastPhenoGraph (FastPG) implementation.
 
-Output relations|.
+Output data|.
 ---|---
-`membership_num`| numeric, per column (e.g. per cell)
-`membership_label`| character, per column (e.g. per cell)
-`modularity_num`| numeric, per column (e.g. per cell)
+`cluster_id`| Cluster ID
 
 ##### Details
 
-The `Rphenograh` R package is a simple R implementation of the phenograph [PhenoGraph](http://www.cell.com/cell/abstract/S0092-8674(15)00637-6) algorithm, which is a clustering method designed for high-dimensional single-cell data analysis. It works by creating a graph ("network") representing phenotypic similarities between cells by calclating the Jaccard coefficient between nearest-neighbor sets, and then identifying communities using the well known [Louvain method](https://sites.google.com/site/findcommunities/) in this graph. 
+This operator is a wrapper around the [PhenoGraph method](http://www.cell.com/cell/abstract/S0092-8674(15)00637-6), which is a clustering algorithm designed for high-dimensional single-cell data analysis. 
 
-##### See Also
-[RphenoGraph package](https://github.com/i-cyto/Rphenograph).
+It works by creating a graph representing phenotypic similarities between cells by calculating the Jaccard coefficient between nearest-neighbor sets, and then identifying communities using the Louvain method. 
+
 
 
