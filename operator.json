@@ -1,30 +1,38 @@
 {
   "name": "PhenoGraph",
   "description": "A graph-based method for flow cytometry data clustering.",
-  "tags": ["clustering", "flow cytometry"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/phenograph_operator"],
+  "tags": [
+    "clustering",
+    "flow cytometry"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/phenograph_operator"
+  ],
   "properties": [
-  {
-    "kind": "DoubleProperty",
-    "name": "k",
-    "defaultValue": 30,
-    "description": "integer, number of nearest neighbours"
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "seed",
-    "defaultValue": -1,
-    "description": "Seed for random number generation. If less than 0, uses a random seed."
-  },
-  {
-    "kind": "EnumeratedProperty",
-    "name": "implementation",
-    "defaultValue": "FastPG",
-    "values": ["FastPG", "Rphenograph"],
-    "description": "R implementation to be used."
-  }
+    {
+      "kind": "DoubleProperty",
+      "name": "k",
+      "defaultValue": 30,
+      "description": "integer, number of nearest neighbours"
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "seed",
+      "defaultValue": -1,
+      "description": "Seed for random number generation. If less than 0, uses a random seed."
+    },
+    {
+      "kind": "EnumeratedProperty",
+      "name": "implementation",
+      "defaultValue": "FastPG",
+      "values": [
+        "FastPG",
+        "Rphenograph"
+      ],
+      "description": "R implementation to be used."
+    }
   ]
 }
-
-
