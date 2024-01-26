@@ -1,6 +1,6 @@
 {
   "name": "PhenoGraph",
-  "description": "A graph-based method for flow cytometry data clustering.",
+  "description": "Clusters flow cytometry data using a graph-based method.",
   "tags": [
     "clustering",
     "flow cytometry"
