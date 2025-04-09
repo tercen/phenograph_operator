@@ -8,7 +8,7 @@ ctx <- tercenCtx()
 
 data <- ctx$as.matrix(fill = NaN)
 
-rownames(data) <- paste('c', seq_len(nrow(data)), sep = '')
+colnames(data) <- paste('c', seq_len(ncol(data)), sep = '')
 
 k <- ctx$op.value('k', as.numeric, 30)
 implementation <- ctx$op.value('implementation', as.character, "Rphenograph")
