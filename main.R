@@ -6,9 +6,9 @@ library(FastPG)
 
 ctx <- tercenCtx()
 
-data <- ctx$as.matrix(fill = NaN) %>% t()
+data <- ctx$as.matrix(fill = NaN)
 
-colnames(data) <- paste('c', seq_len(ncol(data)), sep = '')
+rownames(data) <- paste('c', seq_len(nrow(data)), sep = '')
 
 k <- ctx$op.value('k', as.numeric, 30)
 implementation <- ctx$op.value('implementation', as.character, "Rphenograph")
