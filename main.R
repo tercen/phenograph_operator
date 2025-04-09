@@ -8,7 +8,7 @@ ctx <- tercenCtx()
 
 data <- ctx$as.matrix(fill = NaN)
 
-colnames(data) <- paste('c', seq_len(ncol(data)), sep = '')
+rownames(data) <- paste('c', seq_len(nrow(data)), sep = '')
 
 k <- ctx$op.value('k', as.numeric, 30)
 implementation <- ctx$op.value('implementation', as.character, "Rphenograph")
@@ -25,6 +25,6 @@ if(implementation == "Rphenograph") {
 
 cluster_id <- sprintf(paste0("c%0", max(nchar(as.character(clust))), "d"), clust)
 
-data.frame(.ci = seq(from = 0L, to = length(cluster_id) - 1L), cluster_id) %>%
+data.frame(.ri = seq(from = 0L, to = length(cluster_id) - 1L), cluster_id) %>%
   ctx$addNamespace() %>%
   ctx$save()
