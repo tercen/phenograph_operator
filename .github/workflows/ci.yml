@@ -12,7 +12,19 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+
+  TestTemplate:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tercen/actions/workflow-CI@main
+        with:
+          git-repository: ${GITHUB_REPOSITORY}
+          git-token: ${{ github.token }}
+
+
+  
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
