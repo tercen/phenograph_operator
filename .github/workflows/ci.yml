@@ -18,10 +18,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug Branch Name
+        run: | 
+          echo "Branch: ${GITHUB_REF#refs/heads/}"
       - uses: tercen/actions/workflow-CI@main
         with:
           git-repository: ${GITHUB_REPOSITORY}
-          branch: ${GITHUB_REF}
+          branch: ${GITHUB_REF#refs/heads/}
           git-token: ${{ github.token }}
 
 
