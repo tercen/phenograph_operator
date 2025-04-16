@@ -11,6 +11,7 @@
   "urls": [
     "https://github.com/tercen/phenograph_operator"
   ],
+  "container":"ghcr.io/tercen/phenograph_operator/:specs",
   "properties": [
     {
       "kind": "DoubleProperty",
